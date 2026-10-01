@@ -185,7 +185,7 @@ Ao final do cenário, 3 dos 8 frames estão ocupados pelo PID 1 e os outros 5 pe
 
 #### Cenário 2 — HIT
 
-O PID 1 acessa novamente a Página 0, mas com um offset diferente (offset 100 = `0x64`). Como a página já está carregada no Frame 0, o acesso resulta em **HIT** — sem page fault, sem carregamento. A MMU traduz diretamente o endereço virtual para físico.
+O PID 1 acessa novamente a Página 0, mas com um offset diferente (offset 100 = `0x64`). Como a página já está carregada no Frame 0, o acesso resulta em **HIT** sem page fault, sem carregamento. A MMU traduz diretamente o endereço virtual para físico.
 
 ![Cenário 2 — HIT e início do Cenário 3](img/image3.png)
 
@@ -193,7 +193,7 @@ O PID 1 acessa novamente a Página 0, mas com um offset diferente (offset 100 = 
 
 #### Cenário 3 — Preenchimento do Resto
 
-O PID 2 entra em cena e acessa 5 novas páginas, preenchendo os 5 frames restantes. Ao final, todos os 8 frames estão ocupados — 3 pelo PID 1 e 5 pelo PID 2:
+O PID 2 entra em cena e acessa 5 novas páginas, preenchendo os 5 frames restantes. Ao final, todos os 8 frames estão ocupados 3 pelo PID 1 e 5 pelo PID 2:
 
 ![Estado dos Frames ANTES da Substituição](img/image4.png)
 
@@ -205,7 +205,7 @@ Com a memória cheia, qualquer novo acesso a uma página ausente exige **substit
 
 ![Cenário 4 — Substituição LRU](img/image5.png)
 
-Estado final da memória após as substituições — os frames 1 e 2 agora pertencem a páginas diferentes:
+Estado final da memória após as substituições os frames 1 e 2 agora pertencem a páginas diferentes:
 
 ![Estado dos Frames DEPOIS da Substituição](img/image6.png)
 
