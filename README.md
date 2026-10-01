@@ -223,7 +223,7 @@ Os dois processos iniciam simultaneamente. Os acessos se alternam entre PID 1 e 
 
 #### Fase 2 — HITs e início das substituições LRU (acessos #8 a #14)
 
-Após todos os frames serem preenchidos (acesso #8), os acessos #9 e #10 resultam em **HIT** para cada processo. A partir do acesso #11, a memória está cheia e cada novo acesso passa a acionar o **algoritmo LRU** — os processos competem pelos frames e podem substituir páginas um do outro:
+Após todos os frames serem preenchidos (acesso #8), os acessos #9 e #10 resultam em **HIT** para cada processo. A partir do acesso #11, a memória está cheia e cada novo acesso passa a acionar o **algoritmo LRU** os processos competem pelos frames e podem substituir páginas um do outro:
 
 ![Demo automática — acessos #8 a #14](img/image8.png)
 
